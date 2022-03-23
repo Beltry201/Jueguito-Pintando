@@ -40,7 +40,15 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    begin_fill() #Llamamos a la funcion antes de hacer el triangulo para que se rellene su interior
+    down() #Bajamos el lapiz para que empiece a dibujar
+    goto(end.x, end.y)
+    right(45)
+    forward(((end.x - start.x)**2 + (end.y - start.y)**2)**(1/2)) #Distancia entre los puntos escogidos por el usuario.
+    goto(start.x, start.y)
+    end_fill()
 
 def tap(x, y):
     "Store starting point or draw shape."
