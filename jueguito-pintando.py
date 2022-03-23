@@ -36,7 +36,18 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    for count in range(4): #360/90
+        if (count %2 == 0):
+            forward( end.x - start.x) #Distancia de ancho recorrida
+        else:
+            forward((end.x - start.x) / 2) #Distancia de altura reocrrida
+        left(90) #Gira cada 90 grados
+    end_fill()
+    
 
 def triangle(start, end):
     "Draw triangle from start to end."
